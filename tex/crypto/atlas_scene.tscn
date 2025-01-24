@@ -1,0 +1,50 @@
+[gd_scene load_steps=5 format=3 uid="uid://coswmkki8xvce"]
+
+[ext_resource type="Script" path="res://addons/sprite_cutter/AtlasScene.gd" id="1_5dw5l"]
+[ext_resource type="Texture2D" uid="uid://fgsdbh0tneym" path="res://Sprites/lido.png" id="2_sqlfx"]
+[ext_resource type="Texture2D" uid="uid://iviuywuqxcw4" path="res://Sprites/frax.png" id="3_hd5od"]
+[ext_resource type="Texture2D" uid="uid://kv3n1ylt62fd" path="res://Sprites/bitcoin.png" id="4_eoc7k"]
+
+[node name="AtlasScene" type="Node"]
+script = ExtResource("1_5dw5l")
+destination_path = "res://tex/crypto"
+
+[node name="Lido0" type="Sprite2D" parent="."]
+position = Vector2(768, 127)
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("2_sqlfx")
+flip_h = true
+region_enabled = true
+region_rect = Rect2(278, 278, 1297.06, 2518)
+
+[node name="Lido1" type="Sprite2D" parent="."]
+position = Vector2(668, 133)
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("2_sqlfx")
+flip_h = true
+region_enabled = true
+region_rect = Rect2(1512.51, 0, 1487.49, 3000)
+
+[node name="Frax" type="Sprite2D" parent="."]
+position = Vector2(337, 343)
+texture = ExtResource("3_hd5od")
+region_enabled = true
+region_rect = Rect2(0, 0, 1514.13, 3000)
+
+[node name="Frax2" type="Sprite2D" parent="."]
+position = Vector2(2618, 289)
+texture = ExtResource("3_hd5od")
+region_enabled = true
+region_rect = Rect2(1411.43, 0, 1588.57, 3000)
+
+[node name="Bitcoin" type="Sprite2D" parent="."]
+position = Vector2(6264, 1)
+texture = ExtResource("4_eoc7k")
+region_enabled = true
+region_rect = Rect2(1466.79, 0, 1533.21, 3000)
+
+[node name="Bitcoin2" type="Sprite2D" parent="."]
+position = Vector2(4374, 22)
+texture = ExtResource("4_eoc7k")
+region_enabled = true
+region_rect = Rect2(0, 0, 1494.46, 3000)

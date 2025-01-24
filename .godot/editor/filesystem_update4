@@ -1,0 +1,16 @@
+res://Scripts/scam.gd
+res://RIPPLE(scam).tscn
+res://Scenes/Main.tscn
+res://Scenes/SCAM.tscn
+res://Scenes/InputProcessor.tscn
+res://Scenes/Control.tscn
+res://Scenes/LIDO.tscn
+res://Scenes/MATIC.tscn
+res://Scenes/RIPPLE(scam).tscn
+res://Scripts/crypto.gd
+res://GAME.tscn
+res://Scripts/inputproc.gd
+res://Scripts/game.gd
+res://Scripts/gameover.gd
+res://Scenes/GAME.tscn
+res://Scenes/FRAX.tscn

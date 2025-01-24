@@ -1,0 +1,12 @@
+Timer
+AnimationPlayer
+Label
+Control
+TextureRect
+Node2D
+Sprite2D
+CollisionShape2D
+RigidBody2D
+AtlasScene
+AnimatedSprite2D
+CharacterBody2D

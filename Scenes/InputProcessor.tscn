@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://b1psfjuroqsld"]
+
+[ext_resource type="Script" path="res://Scripts/inputproc.gd" id="1_0yq50"]
+
+[node name="InputProcessor" type="Node2D"]
+script = ExtResource("1_0yq50")
+
+[node name="Limit" type="Timer" parent="."]
+
+[node name="Interval" type="Timer" parent="."]
+wait_time = 0.1

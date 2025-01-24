@@ -1,0 +1,103 @@
+[gd_scene load_steps=7 format=3 uid="uid://cdei6oky6ikfo"]
+
+[ext_resource type="Script" path="res://Scripts/game.gd" id="1_r0asa"]
+[ext_resource type="Texture2D" uid="uid://dqbqgsgjlwsx8" path="res://Sprites/2b61e745e96b9175bb4669369337dc43.jpg" id="2_142x1"]
+[ext_resource type="Script" path="res://Scripts/inputproc.gd" id="3_2qecd"]
+[ext_resource type="Texture2D" uid="uid://didd81tel2i1b" path="res://Sprites/file.png" id="4_4ggow"]
+[ext_resource type="Texture2D" uid="uid://j4y34ojbvtxl" path="res://Sprites/ripple.png" id="5_pk3cc"]
+[ext_resource type="Script" path="res://Scripts/gameover.gd" id="6_06emv"]
+
+[node name="Game" type="Node2D"]
+script = ExtResource("1_r0asa")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(625.778, 352)
+scale = Vector2(1.70048, 1.70048)
+texture = ExtResource("2_142x1")
+
+[node name="Tokens" type="Node2D" parent="."]
+
+[node name="Generator" type="Timer" parent="."]
+wait_time = 2.0
+autostart = true
+
+[node name="InputProcessor" type="Node2D" parent="."]
+script = ExtResource("3_2qecd")
+
+[node name="Interval" type="Timer" parent="InputProcessor"]
+wait_time = 0.1
+
+[node name="Limit" type="Timer" parent="InputProcessor"]
+wait_time = 2.0
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="TextureRect" type="TextureRect" parent="Control"]
+layout_mode = 0
+offset_right = 325.0
+offset_bottom = 602.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_4ggow")
+
+[node name="Label" type="Label" parent="Control"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_colors/font_color = Color(0.0117647, 0.278431, 0.694118, 1)
+text = "0"
+
+[node name="Scam1" type="TextureRect" parent="Control"]
+layout_mode = 0
+offset_right = 3600.0
+offset_bottom = 3600.0
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("5_pk3cc")
+
+[node name="Scam2" type="TextureRect" parent="Control"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("5_pk3cc")
+
+[node name="Scam3" type="TextureRect" parent="Control"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("5_pk3cc")
+
+[node name="GameOverScreen" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("6_06emv")
+
+[node name="Label" type="Label" parent="GameOverScreen"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_colors/font_color = Color(0.00392157, 0.290196, 0.67451, 1)
+text = "GAME OVER"
+
+[node name="Label2" type="Label" parent="GameOverScreen"]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_colors/font_color = Color(0.00392157, 0.290196, 0.666667, 1)
+text = "TOUCH TO PLAY AGAIN!"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="GameOverScreen"]
+
+[node name="Timer" type="Timer" parent="GameOverScreen"]
+wait_time = 2.0
+
+[connection signal="timeout" from="Generator" to="." method="_on_generator_timeout"]
+[connection signal="timeout" from="InputProcessor/Interval" to="InputProcessor" method="_on_interval_timeout"]
+[connection signal="timeout" from="InputProcessor/Limit" to="InputProcessor" method="_on_limit_timeout"]
+[connection signal="timeout" from="GameOverScreen/Timer" to="GameOverScreen" method="_on_timer_timeout"]

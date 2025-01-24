@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://bfwewinxpfwcu"]
+
+[ext_resource type="Script" path="res://Scripts/main.gd" id="1_5pfax"]
+[ext_resource type="PackedScene" uid="uid://b1psfjuroqsld" path="res://Scenes/InputProcessor.tscn" id="4_yy7at"]
+[ext_resource type="PackedScene" uid="uid://7u3o50vhxcgr" path="res://Scenes/Control.tscn" id="5_i0058"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_5pfax")
+
+[node name="Tokens" type="Node2D" parent="."]
+
+[node name="InputProcessor" parent="." instance=ExtResource("4_yy7at")]
+
+[node name="Control" parent="." instance=ExtResource("5_i0058")]
