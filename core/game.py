@@ -24,7 +24,7 @@ class Game:
         }
 
     def setup(self):
-        pygame.time.set_timer(self.spawn_event, 500)
+        pygame.time.set_timer(self.spawn_event, 1000)
 
     def add_entity(self, *entities: EntityBase):
         self._entity_list.extend(entities)
