@@ -85,7 +85,7 @@ class Game:
 
     def draw(self, where: pygame.Surface):
         if len(self._swipe_points) > 1:
-            pygame.draw.lines(where, (255, 255, 255), False, self._swipe_points, 3)
+            pygame.draw.lines(where, (255, 255, 255), False, self._swipe_points[-AppConfig.MAX_SWIPE_LEN:], 3)
 
         for entity in self._entity_list:
             entity.draw(where)

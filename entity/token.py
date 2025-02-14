@@ -14,7 +14,7 @@ class Token(PhysicsBase):
 
         velocity = complex(
             (AppConfig.WIN_WIDTH // 2 - position_x) * random.uniform(0.005, 0.03),
-            random.uniform(AppConfig.WIN_HEIGHT * 0.02, AppConfig.WIN_HEIGHT * 0.04),
+            random.uniform(AppConfig.WIN_HEIGHT * 0.02, AppConfig.WIN_HEIGHT * 0.03),
         )
         self.gravity = 0.45
 
@@ -43,8 +43,8 @@ class Token(PhysicsBase):
         left_pos = complex(self.pos.real - width // 4, self.pos.imag)
         right_pos = complex(self.pos.real + width // 4, self.pos.imag)
 
-        left_vel = complex(self.vel.real + 1, self.vel.imag)
-        right_vel = complex(-self.vel.real - 1, self.vel.imag)
+        left_vel = complex(-self.vel.real - 1, self.vel.imag)
+        right_vel = complex(self.vel.real + 1, self.vel.imag)
 
         return (
             TokenHalf(left_img, left_pos, left_vel, self.gravity),
