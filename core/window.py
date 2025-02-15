@@ -26,4 +26,5 @@ class MainWindow:
             clock.tick(60)
             game.process_frame()
             game.draw(self.screen)
+            game.draw_score(self.screen) 
             pygame.display.flip()

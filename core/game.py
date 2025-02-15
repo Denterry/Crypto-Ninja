@@ -24,7 +24,7 @@ class Game:
         }
 
     def setup(self):
-        pygame.time.set_timer(self.spawn_event, 1000)
+        pygame.time.set_timer(self.spawn_event, 850)
 
     def add_entity(self, *entities: EntityBase):
         self._entity_list.extend(entities)
@@ -85,7 +85,7 @@ class Game:
 
     def draw(self, where: pygame.Surface):
         if len(self._swipe_points) > 1:
-            pygame.draw.lines(where, (255, 255, 255), False, self._swipe_points, 3)
+            pygame.draw.lines(where, (255, 255, 255), False, self._swipe_points[-AppConfig.MAX_SWIPE_LEN:], 3)
 
         for entity in self._entity_list:
             entity.draw(where)
@@ -96,3 +96,19 @@ class Game:
     
     def deactivate(self):
         self._active = False
+    
+    def draw_score(self, surface):
+        """
+        Отображает текущий счет игрока в правом верхнем углу экрана
+        """
+        font = pygame.font.Font(None, 36)
+        score_color = (255, 255, 255)
+        bg_color = (0, 0, 255)
+
+        score_text = font.render(f"Score: {self.score}", True, score_color)
+        text_rect = score_text.get_rect()
+        text_rect.topright = (AppConfig.WIN_WIDTH - 20, 20)
+
+        pygame.draw.rect(surface, bg_color, text_rect.inflate(20, 10))
+
+        surface.blit(score_text, text_rect)
