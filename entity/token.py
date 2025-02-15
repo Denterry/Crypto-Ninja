@@ -16,7 +16,7 @@ class Token(PhysicsBase):
             (AppConfig.WIN_WIDTH // 2 - position_x) * random.uniform(0.005, 0.03),
             random.uniform(AppConfig.WIN_HEIGHT * 0.02, AppConfig.WIN_HEIGHT * 0.03),
         )
-        self.gravity = 0.45
+        self.gravity = 0.30
 
         super().__init__(image, position, velocity, self.gravity)
 

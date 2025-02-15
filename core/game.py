@@ -24,7 +24,7 @@ class Game:
         }
 
     def setup(self):
-        pygame.time.set_timer(self.spawn_event, 500)
+        pygame.time.set_timer(self.spawn_event, 850)
 
     def add_entity(self, *entities: EntityBase):
         self._entity_list.extend(entities)
@@ -96,3 +96,14 @@ class Game:
     
     def deactivate(self):
         self._active = False
+    
+    def draw_score(self, surface):
+        """
+        Отображает текущий счет игрока в правом верхнем углу экрана
+        """
+        font = pygame.font.Font(None, 36)
+        score_text = font.render(f"Score: {self.score}", True, (255, 255, 255))
+        text_rect = score_text.get_rect()
+        text_rect.topright = (AppConfig.WIN_WIDTH - 20, 20)
+
+        surface.blit(score_text, text_rect)
