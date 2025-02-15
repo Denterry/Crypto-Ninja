@@ -102,8 +102,13 @@ class Game:
         Отображает текущий счет игрока в правом верхнем углу экрана
         """
         font = pygame.font.Font(None, 36)
-        score_text = font.render(f"Score: {self.score}", True, (255, 255, 255))
+        score_color = (255, 255, 255)
+        bg_color = (0, 0, 255)
+
+        score_text = font.render(f"Score: {self.score}", True, score_color)
         text_rect = score_text.get_rect()
         text_rect.topright = (AppConfig.WIN_WIDTH - 20, 20)
+
+        pygame.draw.rect(surface, bg_color, text_rect.inflate(20, 10))
 
         surface.blit(score_text, text_rect)
