@@ -1,0 +1,164 @@
+[
+    {
+        "name": "Python",
+        "ring": "adopt",
+        "quadrant": "languages & frameworks",
+        "isNew": "FALSE",
+        "description": "Основной язык разработки, удобен для быстрого прототипирования и разработки игр."
+    },
+    {
+        "name": "Pygame",
+        "ring": "adopt",
+        "quadrant": "languages & frameworks",
+        "isNew": "FALSE",
+        "description": "Библиотека для 2D-игр, проста в использовании, поддерживает низкоуровневые операции с графикой."
+    },
+    {
+        "name": "GitHub/GitLab",
+        "ring": "adopt",
+        "quadrant": "tools",
+        "isNew": "FALSE",
+        "description": "Система контроля версий, удобна для командной работы и ведения истории изменений."
+    },
+    {
+        "name": "VS Code / PyCharm",
+        "ring": "adopt",
+        "quadrant": "tools",
+        "isNew": "FALSE",
+        "description": "Популярные IDE для Python с поддержкой Pygame и инструментов профилирования."
+    },
+    {
+        "name": "JSON / YAML",
+        "ring": "adopt",
+        "quadrant": "tools",
+        "isNew": "FALSE",
+        "description": "Форматы данных для хранения игровых уровней и конфигураций."
+    },
+    {
+        "name": "Open Source спрайты и ассеты",
+        "ring": "adopt",
+        "quadrant": "techniques",
+        "isNew": "FALSE",
+        "description": "Использование свободных ресурсов вместо создания с нуля для ускорения разработки."
+    },
+    {
+        "name": "Go",
+        "ring": "adopt",
+        "quadrant": "languages & frameworks",
+        "isNew": "TRUE",
+        "description": "Язык для создания высокопроизводительного микросервиса по подключению кошельков и взаимодействию с блокчейном."
+    },
+    {
+        "name": "Solidity",
+        "ring": "adopt",
+        "quadrant": "languages & frameworks",
+        "isNew": "TRUE",
+        "description": "Язык разработки смарт-контрактов для создания механизма получения токенов из игры."
+    },
+    {
+        "name": "Web3.js",
+        "ring": "adopt",
+        "quadrant": "libraries",
+        "isNew": "TRUE",
+        "description": "Библиотека для взаимодействия с блокчейном Ethereum из микросервиса на Go или Python."
+    },
+    {
+        "name": "PyOpenGL",
+        "ring": "trial",
+        "quadrant": "libraries",
+        "isNew": "TRUE",
+        "description": "Возможное расширение для 3D-графики или улучшения эффектов (шейдеров)."
+    },
+    {
+        "name": "Arcade Library",
+        "ring": "trial",
+        "quadrant": "languages & frameworks",
+        "isNew": "TRUE",
+        "description": "Альтернатива Pygame с поддержкой современного рендеринга (OpenGL)."
+    },
+    {
+        "name": "Tiled Map Editor",
+        "ring": "trial",
+        "quadrant": "tools",
+        "isNew": "TRUE",
+        "description": "Инструмент для проектирования уровней, интегрируемый в игру через JSON."
+    },
+    {
+        "name": "Pyxel / Retro Game Libraries",
+        "ring": "trial",
+        "quadrant": "languages & frameworks",
+        "isNew": "TRUE",
+        "description": "Альтернативные движки для пиксельных игр, которые могут упростить рендеринг и анимацию."
+    },
+    {
+        "name": "Cython / Numba",
+        "ring": "assess",
+        "quadrant": "libraries",
+        "isNew": "TRUE",
+        "description": "Инструменты для ускорения работы Python-кода за счет компиляции."
+    },
+    {
+        "name": "Panda3D",
+        "ring": "assess",
+        "quadrant": "languages & frameworks",
+        "isNew": "TRUE",
+        "description": "Игровой движок на Python, который может пригодиться, если проект перейдет в 3D."
+    },
+    {
+        "name": "Godot (GDExtension)",
+        "ring": "assess",
+        "quadrant": "languages & frameworks",
+        "isNew": "TRUE",
+        "description": "Возможность комбинировать Python и Godot, но пока это не приоритет для проекта."
+    },
+    {
+        "name": "Dear ImGui / PyImgui",
+        "ring": "assess",
+        "quadrant": "tools",
+        "isNew": "TRUE",
+        "description": "Библиотеки для создания внутриигровых интерфейсов с низким потреблением ресурсов."
+    },
+    {
+        "name": "PyQt / Kivy",
+        "ring": "assess",
+        "quadrant": "tools",
+        "isNew": "TRUE",
+        "description": "UI-фреймворки, которые могут пригодиться, если потребуется сложный графический интерфейс."
+    },
+    {
+        "name": "Godot Engine",
+        "ring": "hold",
+        "quadrant": "languages & frameworks",
+        "isNew": "FALSE",
+        "description": "Хотя это мощный движок, его использование было заброшено из-за сложностей с GDScript и необходимости полного перехода на Python."
+    },
+    {
+        "name": "Unity",
+        "ring": "hold",
+        "quadrant": "languages & frameworks",
+        "isNew": "FALSE",
+        "description": "Слишком тяжелый для 2D-проекта и не соответствует целям текущей разработки."
+    },
+    {
+        "name": "Unreal Engine",
+        "ring": "hold",
+        "quadrant": "languages & frameworks",
+        "isNew": "FALSE",
+        "description": "Избыточен для пиксельной 2D-игры, не подходит для текущего масштаба проекта."
+    },
+    {
+        "name": "Rust + Bevy",
+        "ring": "hold",
+        "quadrant": "languages & frameworks",
+        "isNew": "FALSE",
+        "description": "Перспективно, но требует погружения в Rust, что усложнит разработку на данном этапе."
+    },
+    {
+        "name": "C++ SDL2",
+        "ring": "hold",
+        "quadrant": "languages & frameworks",
+        "isNew": "FALSE",
+        "description": "Сложно в поддержке по сравнению с Python + Pygame, поэтому не подходит для быстрого прототипирования."
+    }
+]
+
