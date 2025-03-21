@@ -16,7 +16,7 @@ tokens_n_weights = [
     (("assets/good/btc.png", 40), 1),
     (("assets/good/eth.png", 5), 10),
 
-    (("assets/scam/shib.png", -10), 2),
+    (("assets/scam/shib.png", -20), 2),
 ]
 
 tokens, weights = zip(*tokens_n_weights)
@@ -46,7 +46,7 @@ def token_fabric(game: Game) -> Token:
 def main():
     window = MainWindow(
         caption="Crypto Ninja",
-        background_path="assets/background.jpg",
+        background_path="assets/background3.jpg",
     )
     game = Game(token_fabric)
 

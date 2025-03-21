@@ -1,4 +1,5 @@
 import pygame
+import random
 
 from core.config import AppConfig
 from entity.base import EntityBase
@@ -16,6 +17,9 @@ class Game:
 
         self.spawn_event = pygame.USEREVENT + 1
 
+        self.tokens_in_series = 0
+        self.max_tokens_in_series = 4
+
         self.event_mapping = {
             pygame.MOUSEBUTTONDOWN: self._on_mouse_down,
             pygame.MOUSEBUTTONUP: self._on_mouse_up,
@@ -24,7 +28,21 @@ class Game:
         }
 
     def setup(self):
-        pygame.time.set_timer(self.spawn_event, 850)
+        self._set_next_spawn_timer()
+
+    def _set_next_spawn_timer(self):
+        if self.tokens_in_series < self.max_tokens_in_series:
+            # Задержка между монетами в серии (меньше)
+            spawn_delay = random.randint(300, 500)
+            self.tokens_in_series += 1
+        else:
+            # Задержка между сериями (больше)
+            spawn_delay = random.randint(1500, 2500)
+            self.tokens_in_series = 0
+            # Случайное количество монет в следующей серии
+            self.max_tokens_in_series = random.randint(3, 12)
+
+        pygame.time.set_timer(self.spawn_event, spawn_delay, True)
 
     def add_entity(self, *entities: EntityBase):
         self._entity_list.extend(entities)
@@ -49,6 +67,7 @@ class Game:
         token = self._token_fabric(self)
         if token is not None:
             self._entity_list.append(token)
+            self._set_next_spawn_timer()
         else:
             print(f"WIN: {self.score}")
 
