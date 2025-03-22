@@ -1,8 +1,7 @@
-
 from flask import Flask, request, jsonify
-from database import get_db_connection, init_db
-import psycopg2
+
 from config import Config
+from database import get_db_connection, init_db
 
 
 app = Flask(__name__)
@@ -14,6 +13,7 @@ with app.app_context():
 @app.route('/player/<player_id>', methods=['GET'])
 def get_player_score(player_id):
     """Получение текущего счета игрока"""
+
     conn = get_db_connection()
     cur = conn.cursor()
     
@@ -32,6 +32,7 @@ def get_player_score(player_id):
 @app.route('/player/<player_id>/score', methods=['POST'])
 def update_player_score(player_id):
     """Обновление счета игрока"""
+
     score = request.json.get('score', 0)
     
     conn = get_db_connection()
