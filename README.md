@@ -75,3 +75,7 @@
 ### Интерфейс
 - В углу экрана отображается текущий баланс.
 - Таймер показывает оставшееся время игры.
+
+Tech-Radar: 
+- https://radar.thoughtworks.com/?documentId=https%3A%2F%2Fdocs.google.com%2Fspreadsheets%2Fd%2F1g4iX7XEK5P2iStE2iJEKZnLtdLPQWIn9r71zBNLrwhY%2Fedit%3Fusp%3Dsharing&sheetName=crypto_ninja_tech_radar
+- https://docs.google.com/spreadsheets/d/1g4iX7XEK5P2iStE2iJEKZnLtdLPQWIn9r71zBNLrwhY/edit?usp=sharing
