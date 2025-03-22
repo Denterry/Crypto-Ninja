@@ -1,0 +1,30 @@
+services:
+  db:
+    image: postgres:13.3-alpine
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_USER: postgres
+      POSTGRES_DB: crypto_ninja
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - app-network
+
+  server:
+    build: .
+    restart: always
+    depends_on:
+      - db
+    ports:
+      - "5000:5000"
+    env_file: .env
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
+
+volumes:
+  postgres_data:

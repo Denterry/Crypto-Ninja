@@ -4,3 +4,5 @@ class AppConfig:
 
     MAX_SWIPE_LEN = 32
     GAME_LEN = 100
+
+    SERVER_URL = "http://51.250.75.86:5000"

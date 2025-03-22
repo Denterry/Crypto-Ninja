@@ -44,11 +44,15 @@ def token_fabric(game: Game) -> Token:
 
 
 def main():
+    player_id = input("Введите ваш ID: ").strip()
+    if not player_id:
+        player_id = "anonymous"
+
     window = MainWindow(
-        caption="Crypto Ninja",
+        caption=f"Crypto Ninja - Игрок: {player_id}",
         background_path="assets/background3.jpg",
     )
-    game = Game(token_fabric)
+    game = Game(token_fabric, player_id)
 
     game.setup()
     window.play(game)
